@@ -1,0 +1,39 @@
+@()
+
+@main() {
+  <form name="loginForm" action="/signin" method="POST">
+    <legend>Sign in</legend>
+
+    <label>E-mail</label>
+    <input type="text" name="loginEmail" placeholder="someone@@someprovnameer.com">
+
+    <label>Password</label>
+    <input type="password" name="loginPassword" placeholder="*******"></input>
+
+    <label class="checkbox">
+      <input type="checkbox" name="loginRememberMe">Remember me</input>
+    </label>
+
+    <button type="submit" class="btn">Login</button>
+  </form>
+
+  Or if you don't have an account yet, create on now:
+
+  <form name="registerForm" action="/signup" method="POST">
+    <legend>Sign up</legend>
+
+    <label>User name</label>
+    <input type="text" name="registerName" placeholder="Some Name"></input>
+
+    <label>E-mail</label>
+    <input type="text" name="registerEmail" placeholder="someone@@someprovnameer.com"></input>
+
+    <label>Password</label>
+    <input type="password" name="registerPassword1" placeholder="*******"></input>
+
+    <label>Repeat password</label>
+    <input type="password" name="registerPassword2" placeholder="*******"></input>
+
+    <button type="submit" class="btn">Register</button>
+  </form>
+}
