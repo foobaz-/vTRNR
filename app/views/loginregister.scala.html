@@ -1,39 +1,74 @@
 @()
 
-@main() {
-  <form name="loginForm" action="/signin" method="POST">
-    <legend>Sign in</legend>
+@scripts = {
+  @* include validation checking script for forms *@
+  <script src="@routes.Assets.at("javascripts/libs/jquery.validate.js")"></script>
+  <script src="@routes.Assets.at("javascripts/loginRegisterScreen.js")"></script>
+}
 
-    <label>E-mail</label>
-    <input type="text" name="loginEmail" placeholder="someone@@someprovnameer.com">
+@main(scripts) {
 
-    <label>Password</label>
-    <input type="password" name="loginPassword" placeholder="*******"></input>
+  <form action="/signin" method="POST" id="loginForm" class="form-horizontal">
+    <fieldset>
+      <legend>Sign in</legend>
 
-    <label class="checkbox">
-      <input type="checkbox" name="loginRememberMe">Remember me</input>
-    </label>
+      <div class="control-group">
+        <label class="control-label" for="loginEmail">Email Address</label>
+        <div class="controls">
+          <input type="text" class="input-xlarge" name="loginEmail" id="loginEmail"></input>
+        </div>
+      </div>
 
-    <button type="submit" class="btn">Login</button>
+      <div class="control-group">
+        <label class="control-label" for="loginPassword">Password</label>
+        <div class="controls">
+          <input type="text" class="input-xlarge" name="loginPassword" id="loginPassword"></input>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary btn-large">Login</button>
+      </div>
+
+    </fieldset>
   </form>
 
-  Or if you don't have an account yet, create on now:
 
-  <form name="registerForm" action="/signup" method="POST">
-    <legend>Sign up</legend>
 
-    <label>User name</label>
-    <input type="text" name="registerName" placeholder="Some Name"></input>
 
-    <label>E-mail</label>
-    <input type="text" name="registerEmail" placeholder="someone@@someprovnameer.com"></input>
+  <!-- <form name="loginForm" action="/signin" method="POST"> -->
+  <!--   <legend>Sign in</legend> -->
 
-    <label>Password</label>
-    <input type="password" name="registerPassword1" placeholder="*******"></input>
+  <!--   <label>E-mail</label> -->
+  <!--   <input type="text" name="loginEmail" placeholder="someone@@someprovnameer.com"> -->
 
-    <label>Repeat password</label>
-    <input type="password" name="registerPassword2" placeholder="*******"></input>
+  <!--   <label>Password</label> -->
+  <!--   <input type="password" name="loginPassword" placeholder="*******"></input> -->
 
-    <button type="submit" class="btn">Register</button>
-  </form>
+  <!--   <label class="checkbox"> -->
+  <!--     <input type="checkbox" name="loginRememberMe">Remember me</input> -->
+  <!--   </label> -->
+
+  <!--   <button type="submit" class="btn">Login</button> -->
+  <!-- </form> -->
+
+  <!-- Or if you don't have an account yet, create on now: -->
+
+  <!-- <form name="registerForm" action="/signup" method="POST"> -->
+  <!--   <legend>Sign up</legend> -->
+
+  <!--   <label>User name</label> -->
+  <!--   <input type="text" name="registerName" placeholder="Some Name"></input> -->
+
+  <!--   <label>E-mail</label> -->
+  <!--   <input type="text" name="registerEmail" placeholder="someone@@someprovnameer.com"></input> -->
+
+  <!--   <label>Password</label> -->
+  <!--   <input type="password" name="registerPassword1" placeholder="*******"></input> -->
+
+  <!--   <label>Repeat password</label> -->
+  <!--   <input type="password" name="registerPassword2" placeholder="*******"></input> -->
+
+  <!--   <button type="submit" class="btn">Register</button> -->
+  <!-- </form> -->
 }
